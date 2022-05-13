@@ -1,0 +1,17 @@
+
+.line{
+    display: flex;
+}
+
+.black{
+    background-color: black;
+    width: 60px;
+    height: 60px;
+    border: 1px solid white;
+}
+.white{
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+}

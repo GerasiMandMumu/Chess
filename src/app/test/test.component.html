@@ -1,0 +1,15 @@
+<div class="name" #name>{{surname}}</div>
+<button (click)="onClickAdd()">+</button>
+<button (click)="onClickDel()">-</button>
+<div class="content">
+    <div class="block">
+        <div class="figure" #figure></div>
+    </div>
+    <div class="block">
+        <button (click)="onClickChangeFigure('circle')">Circle</button>
+        <button (click)="onClickChangeFigure('quad')">Quad</button>
+        <button (click)="onClickChangeFigure('triangle')">Triangle</button> 
+    </div>
+</div>
+
+
