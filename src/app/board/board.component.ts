@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { GameService } from "./gameService";
 
+
 @Component({
     selector: "app-board",
     template: `

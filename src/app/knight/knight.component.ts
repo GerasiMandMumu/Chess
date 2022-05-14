@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SkyhookDndService } from "@angular-skyhook/core";
-import { horseImage, ItemTypes } from '../constants';
+import { ItemTypes, horseImage } from '../constants';
+
 
 @Component({
     selector: 'app-knight',

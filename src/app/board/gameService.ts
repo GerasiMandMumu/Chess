@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Coord } from './coords';
 
+
 @Injectable()
 export class GameService {
 
@@ -9,7 +10,7 @@ export class GameService {
     currentPosition!: Coord;
 
     constructor() {
-        this.knightPosition$.subscribe((kp: Coord) => {
+        this.knightPosition$.subscribe(kp => {
             this.currentPosition = kp;
         })
     }
