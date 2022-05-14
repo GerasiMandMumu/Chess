@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { SkyhookDndService } from "@angular-skyhook/core";
+import { horseImage, ItemTypes } from '../constants';
 
 @Component({
-  selector: 'app-knight',
-  templateUrl: './knight.component.html',
-  styleUrls: ['./knight.component.scss']
+    selector: 'app-knight',
+    template: `<span *dragSource="knightSource" [class.dragging]="isDragging$|async">♘</span>`,
+    styleUrls: ['./knight.component.scss']
 })
-export class KnightComponent implements OnInit {
+export class KnightComponent {
 
-  constructor() { }
+    knightSource = this.dnd.dragSource(ItemTypes.KNIGHT, {
+        beginDrag: () => ({})
+    });
 
-  ngOnInit(): void {
-  }
+    isDragging$ = this.knightSource.listen(m => m.isDragging());
+
+    constructor(private dnd: SkyhookDndService) { }
+
+    ngOnInit() {
+        const img = new Image();
+        img.src = horseImage;
+        img.onload = () => this.knightSource.connectDragPreview(img);
+    }
+
+    ngOnDestroy() {
+        this.knightSource.unsubscribe();
+    }
 
 }

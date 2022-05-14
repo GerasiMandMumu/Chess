@@ -1,3 +1,4 @@
+<!--
 <div class="board">
 
     <div class="line">
@@ -90,3 +91,15 @@
         <div class="white"></div>
     </div>
 </div>
+-->
+<!--
+<div class="board">
+    <ng-container *ngIf="knightPosition$|async as kp">
+        <div *ngFor="let i of sixtyFour">
+            <app-cell-square *ngIf="xy(i) as pos" [position]="pos">
+                <app-knight *ngIf="pos.x === kp.x && pos.y === kp.y"></app-knight>
+            </app-cell-square>
+        </div>
+    </ng-container>
+</div>
+-->

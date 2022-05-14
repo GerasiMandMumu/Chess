@@ -14,6 +14,8 @@ import { OfficerComponent } from './officer/officer.component';
 import { RookComponent } from './rook/rook.component';
 import { QueenComponent } from './queen/queen.component';
 import { KingComponent } from './king/king.component';
+import { GameService } from './board/gameService';
+import { BoardSquareComponent } from './board-square/board-square.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +29,15 @@ import { KingComponent } from './king/king.component';
     OfficerComponent,
     RookComponent,
     QueenComponent,
-    KingComponent
+    KingComponent,
+    BoardSquareComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     FormsModule
   ],
-  providers: [],
+  providers: [GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

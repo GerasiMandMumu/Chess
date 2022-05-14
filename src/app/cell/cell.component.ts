@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-cell',
-  templateUrl: './cell.component.html',
-  styleUrls: ['./cell.component.scss']
+    selector: 'app-cell',
+    template: `
+    <div [ngStyle]="getStyle()">
+        <ng-content></ng-content>
+    </div>
+    `,
+    styles: [`
+    :host, div {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    `]
 })
-export class CellComponent implements OnInit {
+export class CellComponent {
+    @Input() black!: boolean;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    getStyle() {
+        return this.black
+            ? { backgroundColor: 'black', color: 'white' }
+            : { backgroundColor: 'white', color: 'black' };
+    }
 }
